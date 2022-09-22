@@ -50,7 +50,7 @@ function createImgMarkup(item) {
 refs.gallery.insertAdjacentHTML("beforeend", imgMarkup);
 const onImgClick = (e) => {
   e.preventDefault();
-  if (e.target.classList.contains("gallery")) return;
+  if (e.target === e.currentTarget) return;
   const source = e.target.dataset.source;
   const instance = basicLightbox.create(`
   <div class="modal">
